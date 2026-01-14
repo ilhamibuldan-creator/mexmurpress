@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "news"
+    label: "News"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}-{{year}}{{month}}{{day}}{{hour}}{{minute}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Content", name: "content", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Mexmûrî (Kürtçe)","Makhmur-Bewohner (Deutsch)","Penaberî/SEM","Penaberî/SEM (Deutsch)"] }
+      - { label: "Date (YYYY-MM-DD)", name: "date", widget: "string" }
+      - { label: "Date Text", name: "dateText", widget: "string", required: false }
+      - { label: "City", name: "city", widget: "string", required: false }
+      - { label: "Venue", name: "venue", widget: "string", required: false }
+      - { label: "Start Time", name: "startTime", widget: "string", required: false }
+      - { label: "Duration (min)", name: "durationMin", widget: "number", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Video URL (YouTube/Vimeo)", name: "videoUrl", widget: "string", required: false }
+      - { label: "Source", name: "source", widget: "string", required: false }

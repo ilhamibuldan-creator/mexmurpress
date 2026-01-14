@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="./index.html">← Malper</a>
+      <strong>Admin</strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" style="margin:18px 0;">
+      <h2>Nûçeyê Çêbike</h2>
+
+      <p style="color:var(--muted);margin-top:0;">
+        Bu sayfa JSON üretir. Çıktıyı kopyalayıp <code>data/news.json</code> dosyasına eklersin.
+      </p>
+
+      <label>ID</label><br/>
+      <input id="id" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" placeholder="mexmuri-ku-002" /><br/><br/>
+
+      <label>Kategori</label><br/>
+      <input id="category" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" placeholder="Mexmûrî (Kürtçe)" /><br/><br/>
+
+      <label>Sergotar</label><br/>
+      <input id="title" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" /><br/><br/>
+
+      <label>Kurtasî</label><br/>
+      <input id="summary" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" /><br/><br/>
+
+      <label>Detay (content)</label><br/>
+      <textarea id="content" rows="8" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);"></textarea><br/><br/>
+
+      <label>Dîrok (makine) YYYY-MM-DD</label><br/>
+      <input id="date" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" placeholder="2026-01-11" /><br/><br/>
+
+      <label>Dîrok (görünen) dateText</label><br/>
+      <input id="dateText" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" placeholder="Çile 11 2026" /><br/><br/>
+
+      <label>Çavkanî</label><br/>
+      <input id="source" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1422;color:var(--text);" value="Editör" /><br/><br/>
+
+      <button id="make" class="chip">JSON Oluştur</button>
+
+      <pre id="out" class="card" style="margin-top:12px;white-space:pre-wrap;"></pre>
+    </section>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    $("make").addEventListener("click", () => {
+      const obj = {
+        id: $("id").value.trim(),
+        title: $("title").value.trim(),
+        summary: $("summary").value.trim(),
+        content: $("content").value.trim(),
+        category: $("category").value.trim(),
+        date: $("date").value.trim(),
+        dateText: $("dateText").value.trim(),
+        source: $("source").value.trim()
+      };
+
+      $("out").textContent = JSON.stringify(obj, null, 2);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kurte Nûçe</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="./index.html">Kurte Nûçe</a>
+
+      <nav class="nav">
+        <button class="chip is-active" data-category="Tümü">Tümü</button>
+        <button class="chip" data-category="Mexmûrî (Kürtçe)">Mexmûrî (Kürtçe)</button>
+        <button class="chip" data-category="Makhmur-Bewohner (Deutsch)">Makhmur-Bewohner (Deutsch)</button>
+        <button class="chip" data-category="Penaberî/SEM">Penaberî/SEM</button>
+        <button class="chip" data-category="Penaberî/SEM (Deutsch)">Penaberî/SEM (Deutsch)</button>
+      </nav>
+
+      <div class="search">
+        <input id="q" type="search" placeholder="Lêbigere: gotar, kurtasî..." />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Kurte Nûçe û Agahdarî</h1>
+      <p>Naverokên Kurdî û Almanî.</p>
+    </section>
+
+    <section class="grid" id="list"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>
+        © <span id="year"></span> Kurte Nûçe ·
+        <a href="./impressum.html">Impressum</a> ·
+        <a href="./datenschutz.html">Datenschutz</a>
+      </small>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
